@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario Escolar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 40px;
+            background-color: #f4f7f6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mi Horario Escolar</h1>
+
+    <table id="tablaHorario">
+        <thead>
+            <tr>
+                <th>Hora</th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miércoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+            </tr>
+        </thead>
+        <tbody>
+            </tbody>
+    </table>
+
+    <script>
+        const horario = [
+            {
+                hora: "8:00 - 9:00",
+                lunes: "Matemáticas",
+                martes: "Español",
+                miercoles: "Historia",
+                jueves: "Inglés",
+                viernes: "Informática"
+            },
+            {
+                hora: "9:00 - 10:00",
+                lunes: "Física",
+                martes: "Química",
+                miercoles: "Matemáticas",
+                jueves: "Español",
+                viernes: "Libre"
+            }
+        ];
+
+        const cuerpoTabla = document.querySelector("#tablaHorario tbody");
+
+        function cargarHorario() {
+            try {
+                if (!Array.isArray(horario) || horario.length === 0) {
+                    throw new Error("No hay datos disponibles.");
+                }
+
+                // Limpiamos el cuerpo por si acaso
+                cuerpoTabla.innerHTML = "";
+
+                horario.forEach(bloque => {
+                    const fila = document.createElement("tr");
+                    fila.innerHTML = `
+                        <td><strong>${bloque.hora}</strong></td>
+                        <td>${bloque.lunes}</td>
+                        <td>${bloque.martes}</td>
+                        <td>${bloque.miercoles}</td>
+                        <td>${bloque.jueves}</td>
+                        <td>${bloque.viernes}</td>
+                    `;
+                    cuerpoTabla.appendChild(fila);
+                });
+
+            } catch (error) {
+                console.error("Error:", error.message);
+                cuerpoTabla.innerHTML = `
+                    <tr>
+                        <td colspan="6" style="color: red;">
+                            Error al cargar el horario: ${error.message}
+                        </td>
+                    </tr>
+                `;
+            }
+        }
+
+        // Ejecutar la función
+        cargarHorario();
+    </script>
+</body>
+</html>
