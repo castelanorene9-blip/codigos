@@ -1,0 +1,620 @@
+/* =====================================================
+   GOOGLE FONTS
+===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* =====================================================
+   RESET GENERAL
+===================================================== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =====================================================
+   VARIABLES GLOBALES
+===================================================== */
+:root{
+
+    /* Colores Premium */
+    --color-fondo: #f4f7fb;
+    --color-blanco: #ffffff;
+    --color-texto: #1e293b;
+    --color-secundario: #64748b;
+
+    /* Color de acento */
+    --color-acento: #4f46e5;
+    --color-acento-hover: #4338ca;
+
+    /* Gradientes */
+    --gradiente-principal: linear-gradient(135deg, #4f46e5, #7c3aed);
+
+    /* Sombras premium */
+    --sombra-suave: 0 8px 30px rgba(15, 23, 42, 0.08);
+    --sombra-hover: 0 15px 40px rgba(79, 70, 229, 0.18);
+
+    /* Radios */
+    --radio-grande: 24px;
+    --radio-mediano: 18px;
+    --radio-pequeno: 12px;
+
+    /* Transiciones */
+    --transicion: all 0.35s ease;
+}
+
+/* =====================================================
+   ESTILOS GENERALES
+===================================================== */
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+/* Fondo decorativo */
+body::before{
+    content: "";
+    position: fixed;
+    top: -200px;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+    background: rgba(79, 70, 229, 0.08);
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+}
+
+/* =====================================================
+   HEADER PREMIUM + AUTO HIDE
+===================================================== */
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+
+    padding: 22px 6%;
+
+    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+
+    transition: transform 0.4s ease,
+                background 0.3s ease;
+}
+
+/* Clase para ocultar el navbar */
+.header-hidden{
+    transform: translateY(-100%);
+}
+
+/* =====================================================
+   CONTENEDOR HEADER
+===================================================== */
+.contenedor-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* =====================================================
+   LOGO
+===================================================== */
+.logo img{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    padding: 5px;
+
+    background: var(--color-blanco);
+
+    box-shadow: var(--sombra-suave);
+
+    transition: var(--transicion);
+}
+
+.logo img:hover{
+    transform: scale(1.05) rotate(2deg);
+}
+
+/* =====================================================
+   TITULOS
+===================================================== */
+.titulo-corporativo{
+    text-align: right;
+}
+
+.titulo-corporativo h1{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+
+    background: var(--gradiente-principal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.eslogan{
+    color: var(--color-secundario);
+    font-size: 1rem;
+    margin-top: 6px;
+    letter-spacing: 1px;
+}
+
+/* =====================================================
+   NAVEGACIÓN
+===================================================== */
+nav{
+    margin-top: 25px;
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav ul li a{
+    position: relative;
+
+    text-decoration: none;
+
+    color: var(--color-texto);
+
+    font-weight: 600;
+
+    padding: 10px 0;
+
+    transition: var(--transicion);
+}
+
+/* Línea animada */
+nav ul li a::after{
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 0%;
+    height: 3px;
+
+    border-radius: 20px;
+
+    background: var(--gradiente-principal);
+
+    transition: var(--transicion);
+}
+
+nav ul li a:hover{
+    color: var(--color-acento);
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+/* =====================================================
+   MAIN
+===================================================== */
+main{
+    width: 90%;
+    max-width: 1300px;
+
+    margin: auto;
+
+    padding: 90px 0;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+.hero{
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.hero h2{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+
+    font-size: 3.5rem;
+    font-weight: 700;
+
+    margin-bottom: 25px;
+
+    line-height: 1.2;
+}
+
+.hero p{
+    max-width: 850px;
+
+    margin: auto;
+    margin-bottom: 40px;
+
+    color: var(--color-secundario);
+
+    font-size: 1.1rem;
+}
+
+.hero img{
+    width: 100%;
+    max-width: 500px;
+
+    border-radius: var(--radio-grande);
+
+    box-shadow: var(--sombra-hover);
+
+    transition: var(--transicion);
+}
+
+.hero img:hover{
+    transform: translateY(-8px) scale(1.02);
+}
+
+/* =====================================================
+   TARJETAS
+===================================================== */
+.informacion{
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 320px;
+
+    background: rgba(255,255,255,0.75);
+
+    backdrop-filter: blur(12px);
+
+    border-radius: var(--radio-grande);
+
+    padding: 35px;
+
+    box-shadow: var(--sombra-suave);
+
+    transition: var(--transicion);
+}
+
+.card:hover{
+    transform: translateY(-10px);
+
+    box-shadow: var(--sombra-hover);
+}
+
+.card h3{
+    font-size: 1.4rem;
+
+    margin-bottom: 18px;
+
+    color: var(--color-acento);
+}
+
+.card p{
+    color: var(--color-secundario);
+}
+
+/* =====================================================
+   CONTENIDO
+===================================================== */
+.contenido{
+    background: rgba(255,255,255,0.8);
+
+    backdrop-filter: blur(14px);
+
+    padding: 50px;
+
+    margin-bottom: 40px;
+
+    border-radius: var(--radio-grande);
+
+    box-shadow: var(--sombra-suave);
+}
+
+.contenido h2{
+    font-size: 2rem;
+
+    margin-bottom: 20px;
+
+    color: var(--color-acento);
+}
+
+.contenido p{
+    color: var(--color-secundario);
+}
+
+/* =====================================================
+   SERVICIOS
+===================================================== */
+.titulo-seccion{
+    text-align: center;
+
+    font-size: 3rem;
+
+    margin-bottom: 70px;
+
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.contenedor-servicios{
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+.servicio{
+    width: 340px;
+
+    overflow: hidden;
+
+    background: rgba(255,255,255,0.8);
+
+    border-radius: var(--radio-grande);
+
+    box-shadow: var(--sombra-suave);
+
+    transition: var(--transicion);
+}
+
+.servicio:hover{
+    transform: translateY(-10px);
+
+    box-shadow: var(--sombra-hover);
+}
+
+.servicio img{
+    width: 100%;
+    height: 240px;
+
+    object-fit: cover;
+
+    transition: var(--transicion);
+}
+
+.servicio:hover img{
+    transform: scale(1.05);
+}
+
+.servicio h3{
+    padding: 25px 25px 12px;
+
+    font-size: 1.4rem;
+
+    color: var(--color-acento);
+}
+
+.servicio p{
+    padding: 0 25px 30px;
+
+    color: var(--color-secundario);
+}
+
+/* =====================================================
+   CONTACTO
+===================================================== */
+.contacto-info,
+.formulario-contacto{
+    background: rgba(255,255,255,0.8);
+
+    backdrop-filter: blur(14px);
+
+    padding: 45px;
+
+    margin-bottom: 35px;
+
+    border-radius: var(--radio-grande);
+
+    box-shadow: var(--sombra-suave);
+}
+
+.contacto-info h2,
+.formulario-contacto h2{
+    margin-bottom: 25px;
+
+    font-size: 2rem;
+
+    color: var(--color-acento);
+}
+
+/* =====================================================
+   FORMULARIOS
+===================================================== */
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    margin-top: 18px;
+    margin-bottom: 8px;
+
+    font-weight: 600;
+}
+
+input,
+textarea{
+    padding: 16px;
+
+    border-radius: var(--radio-pequeno);
+
+    border: 1px solid #dbe4f0;
+
+    background: rgba(255,255,255,0.9);
+
+    font-size: 1rem;
+
+    font-family: inherit;
+
+    transition: var(--transicion);
+}
+
+input:focus,
+textarea:focus{
+    outline: none;
+
+    border-color: var(--color-acento);
+
+    box-shadow: 0 0 0 5px rgba(79, 70, 229, 0.12);
+}
+
+textarea{
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* =====================================================
+   BOTONES
+===================================================== */
+button{
+    margin-top: 28px;
+
+    padding: 16px 28px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: var(--gradiente-principal);
+
+    color: white;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transicion);
+
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.25);
+}
+
+button:hover{
+    transform: translateY(-3px);
+
+    box-shadow: 0 18px 35px rgba(79, 70, 229, 0.35);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+footer{
+    margin-top: 90px;
+
+    background: rgba(255,255,255,0.7);
+
+    backdrop-filter: blur(10px);
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    color: var(--color-secundario);
+
+    font-size: 0.95rem;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 992px){
+
+    .hero h2{
+        font-size: 2.8rem;
+    }
+
+    .titulo-seccion{
+        font-size: 2.4rem;
+    }
+
+}
+
+@media (max-width: 768px){
+
+    header{
+        padding: 20px;
+    }
+
+    .contenedor-header{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .titulo-corporativo{
+        text-align: center;
+    }
+
+    nav ul{
+        gap: 20px;
+    }
+
+    .hero h2{
+        font-size: 2.2rem;
+    }
+
+    .hero{
+        margin-bottom: 70px;
+    }
+
+    .informacion,
+    .contenedor-servicios{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card,
+    .servicio{
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .contenido,
+    .contacto-info,
+    .formulario-contacto{
+        padding: 30px;
+    }
+
+}
+
+@media (max-width: 480px){
+
+    main{
+        width: 92%;
+    }
+
+    .hero h2{
+        font-size: 1.8rem;
+    }
+
+    .titulo-corporativo h1{
+        font-size: 2rem;
+    }
+
+    nav ul{
+        flex-direction: column;
+    }
+
+    button{
+        width: 100%;
+    }
+
+}

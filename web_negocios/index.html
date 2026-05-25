@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Elotes La Plaza | Inicio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="contenedor">
+
+            <!-- Logo -->
+            <div class="logo">
+                <img src="logo.png.jpeg" alt="Logo Elotes La Plaza">
+            </div>
+
+            <!-- Título -->
+            <div class="info-header">
+                <h1>Elotes La Plaza</h1>
+
+                <p class="eslogan">
+                    El auténtico sabor mexicano en cada bocado 🌽
+                </p>
+            </div>
+
+        </div>
+
+        <!-- MENÚ -->
+        <nav class="navbar">
+
+            <ul class="menu">
+
+                <li><a href="index.html">Inicio</a></li>
+
+                <li><a href="nosotros.html">Nosotros</a></li>
+
+                <li><a href="servicios.html">Menú</a></li>
+
+                <li><a href="contacto.html">Contacto</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- CONTENIDO -->
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="hero-texto">
+
+                <h2>
+                    ¡Bienvenidos a Elotes La Plaza!
+                </h2>
+
+                <p>
+                    Disfruta de los mejores elotes, esquites y antojitos
+                    preparados con ingredientes frescos y el auténtico
+                    sabor tradicional mexicano.
+                </p>
+
+                <a href="servicios.html" class="btn">
+                    Ver Menú
+                </a>
+
+            </div>
+
+            <div class="hero-imagen">
+                <img src="menu oficial.png" alt="Elotes La Plaza">
+            </div>
+
+        </section>
+
+        <!-- TARJETAS -->
+        <section class="cards">
+
+            <article class="card">
+
+                <h3>🌽 Sabor Tradicional</h3>
+
+                <p>
+                    Conservamos el auténtico sabor mexicano en cada uno
+                    de nuestros productos.
+                </p>
+
+            </article>
+
+            <article class="card">
+
+                <h3>🥄 Ingredientes Frescos</h3>
+
+                <p>
+                    Utilizamos ingredientes de calidad para brindar
+                    el mejor sabor y frescura.
+                </p>
+
+            </article>
+
+            <article class="card">
+
+                <h3>😊 Atención Amigable</h3>
+
+                <p>
+                    Nuestro compromiso es ofrecerte un servicio rápido,
+                    amable y familiar.
+                </p>
+
+            </article>
+
+        </section>
+
+        <!-- INTEGRANTES -->
+        <section class="integrantes">
+
+            <div class="integrantes-contenedor">
+
+                <h2 class="titulo-integrantes">
+                    Equipo del Proyecto
+                </h2>
+
+                <p class="texto-integrantes">
+                    Proyecto escolar desarrollado por:
+                </p>
+
+                <div class="grid-integrantes">
+
+                    <div class="integrante">
+                        <h3>[CASTELANO RESENDIZ RENE 1]</h3>
+                    </div>
+
+                    <div class="integrante">
+                        <h3>[ALISON GERALDINE ARAUJO LOPEZ 2]</h3>
+                    </div>
+
+                    <div class="integrante">
+                        <h3>[NAOMI DAREY YAÑEZ NIETO 3]</h3>
+                    </div>
+
+                    <div class="integrante">
+                        <h3>[MARLEY GUADALUPE RIVAS ENCARNACION 4]</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <p>
+            © 2026 Elotes La Plaza | Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+    <script>
+
+        let lastScroll = 0;
+        const header = document.querySelector("header");
+
+        window.addEventListener("scroll", () => {
+
+            const currentScroll = window.pageYOffset;
+
+            /* Ocultar navbar al bajar */
+            if(currentScroll > lastScroll && currentScroll > 120){
+
+                header.classList.add("header-hidden");
+
+            }
+
+            /* Mostrar navbar al subir */
+            else{
+
+                header.classList.remove("header-hidden");
+
+            }
+
+            lastScroll = currentScroll;
+
+        });
+
+    </script>
+
+</body>
+
+</html>
